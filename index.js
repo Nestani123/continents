@@ -2,6 +2,8 @@ const API_URL ="https://restcountries.com/v3.1/all";
 
 const countryListContainer = document.querySelector(".countries");
 const searchInput = document.querySelector(".search")[0];
+const filterBtn = document.querySelector(".filter")[0];
+
 
 const getCountries = async()=>{
 const response = await fetch(API_URL);
@@ -14,9 +16,16 @@ searchInput.addEventListener("keyup", (event) => {
     country.name.common.toLowerCase().includes(searchValue.toLowerCase())
     );
     render(filteredData);
-    console.log(filteredData);
+
     });
 
+    filterBtn.addEventListener("change", (event) => {
+    const filterValue = event.target.value;
+    const filteredData = data.filter( (country) => 
+    country.region === filterValue);
+    if(filterValue === "All") render(data);
+    else render(filteredData);
+    });
 };
 
 getCountries();
