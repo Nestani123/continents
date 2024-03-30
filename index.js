@@ -3,6 +3,7 @@ const API_URL ="https://restcountries.com/v3.1/all";
 const countryListContainer = document.querySelector(".countries");
 const searchInput = document.querySelector(".search")[0];
 const filterBtn = document.querySelector(".filter")[0];
+const themeBtn = document.querySelector(".theme-btn");
 
 
 const getCountries = async()=>{
@@ -44,4 +45,8 @@ const render = (data)=>{
         `;
         countryListContainer.append(listItem);
     }
-}
+};
+
+themeBtn.addEventListener("click",()=>{
+    document.documentElement.classList.toggle("dark");
+});
