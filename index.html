@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Where in the world?</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Where in the world?</h1>
+        <button>☾ Dark Mode</button>
+      </header>
+      <main>
+        <div class="search_filter">
+        <form class="search">
+          🔍 <input type="Search" placeholder="Search for a country..." />
+        </form>
+        <form class="filter">
+          <select name="region">
+            <option selected value="all">Filter by region</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="America">America</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </form>
+    </div>
+      </main>
+    </div>
     <script src="index.js" defer></script>
-</body>
+  </body>
 </html>
